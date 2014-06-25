@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/_MyLayoutPro.cshtml";
+}
+<div class="center_content">
+<div id="bodyPan">
+  		<h1><span ><strong><em style="margin-left:250px">Admin Login</em></strong></span></h1> <br />
+
+    	<form action="/Account/Adminlogin" method="post" class="form1">
+            <table style="margin-left:300px">
+		<tr><td><p>Name</p></td><td>@Html.TextBox("login-name", "")</td></tr>
+		<tr>
+        <td><p>Password</p></td>
+		<td><input name="login-password" type="password" /><br />
+        <br /></td>
+        </tr>
+        <tr><td><input type="submit" value="Log in"/></td></tr>
+    </table>
+	</form>
+    </div>  
+    </div>
+
+
+   
+   
+
+
+
+
+

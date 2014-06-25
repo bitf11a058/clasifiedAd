@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "UpdateAds";
+    Layout = "~/Views/Shared/_MyLayoutPro.cshtml";
+}
+
+@model ClassifiedAds.Models.AdDetail  
+  <div>
+  <h2>Update Product</h2>
+      @using (Html.BeginForm("Update", "Admin", FormMethod.Post)) 
+      {
+      <table width="500" border="0">
+  <tr>
+      <div class="image_path"><img src="~/images/@ViewBag.ad.Image_path" alt="" title="" border="0" /></div>
+   </tr>
+           <tr>
+      <div class="image_path">@Html.HiddenFor(m=>m.Image_path)</div>
+   </tr>
+          <tr>              
+    <th width="153" height="50" scope="row">
+      <h3>@Html.HiddenFor(m=>m.AdId)</h3>
+</th>
+    <td  width="252" height="50" >@Html.HiddenFor(m=>m.AdId)</td>
+    <td  width="81" height="50" >&nbsp;</td>
+  </tr>
+  <tr>
+    <th width="153" height="50" scope="row">      <h3>@Html.LabelFor(m=>m.AdTitle)</h3></th>
+    <td width="252" height="50" >@Html.TextBoxFor(m=>m.AdTitle)</td>
+    <td width="81" height="50" >&nbsp;</td>
+  </tr>
+  <tr>
+    <th width="153" height="50" scope="row">      <h3>@Html.LabelFor(m=>m.AdType)</h3></th>
+    <td width="252" height="50" >@Html.TextBoxFor(m=>m.AdType)</td>
+    <td width="81" height="50" >&nbsp;</td>
+  </tr>
+  
+  <tr>
+    <th width="153" height="50" scope="row">      <h3>@Html.LabelFor(m=>m.Status)</h3></th>
+    <td width="252" height="50" >@Html.TextBoxFor(m=>m.Status)</td>
+    <td width="81" height="50" >&nbsp;</td>
+  </tr>
+  <tr>
+    <th width="153" height="50" scope="row">      <h3>@Html.LabelFor(m=>m.Price)</h3></th>
+    <td width="252" height="50" >@Html.TextBoxFor(m=>m.Price)</td>
+    <td width="81" height="50" >&nbsp;</td>
+  </tr>
+           <tr>
+    <th width="153" height="50" scope="row">      <h3>@Html.LabelFor(m=>m.Quantity)</h3></th>
+    <td width="252" height="50" >@Html.TextBoxFor(m=>m.Quantity)</td>
+    <td width="81" height="50" >&nbsp;</td>
+  </tr>
+  <tr>
+    <td><input type="submit" name="updatebutton" value="Update Item" /></td>
+  </tr>
+</table>
+   	  }
+      <div>
+    @Html.ActionLink("Back to MAin MEnu", "AdminHome")
+</div>
+    </div> <!-- end of templatmeo_content -->
+
+
+
+    
+   
+  

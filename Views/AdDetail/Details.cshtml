@@ -1,0 +1,71 @@
+﻿@model ClassifiedAds.Models.AdDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AdDetail</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AdId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AdTitle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdTitle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AdType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Status)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Quantity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Quantity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Image_path)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Image_path)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Customer.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Customer.UserName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

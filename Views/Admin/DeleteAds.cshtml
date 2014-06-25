@@ -1,0 +1,28 @@
+﻿@model ClassifiedAds.Models.AdDetail
+
+@{
+    ViewBag.Title = "DeleteAds";
+    Layout = "~/Views/Shared/_MyLayoutPro.cshtml";
+}
+<div class="center_content">    
+<h2>DeleteAds</h2>
+<table width="500" border="0">
+     <tr>
+      <div class="product_img"><img src="~/images/@ViewBag.ad.Image_path" alt="" title="" border="0" /></div>
+   </tr>
+           <tr>
+      <div class="product_img">@Html.HiddenFor(m=>m.Image_path)</div>
+   </tr>
+    </table>
+  @using (Html.BeginForm()) 
+  {
+    
+        <input type="submit" value="Delete" /> 
+        <div>
+    @Html.ActionLink("Back to MAin MEnu", "Home","Admin")
+</div>
+ 
+}
+      
+  
+    </div> <!-- end of templatmeo_content -->

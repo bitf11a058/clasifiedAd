@@ -1,0 +1,51 @@
+﻿@model ClassifiedAds.Models.AdDetail
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_MyLayoutPro.cshtml";
+}
+
+<div>
+  <h2>Update Ads</h2>
+      @using (Html.BeginForm("UpdateProductDB", "Admin", FormMethod.Post)) 
+      {
+      <table width="500" border="0">
+  <tr>
+      <div class="product_img"><img src="~/images/@ViewBag.prod.Product_Image" alt="" title="" border="0" /></div>
+   </tr>
+           <tr>
+      <div class="product_img">@Html.HiddenFor(m=>m.Image_path)</div>
+   </tr>
+  <tr>
+    <th width="153" height="50" scope="row">      <h3>@Html.LabelFor(m=>m.AdTitle)</h3></th>
+    <td width="252" height="50" >@Html.TextBoxFor(m=>m.AdTitle)</td>
+    <td width="81" height="50" >&nbsp;</td>
+  </tr>
+  <tr>
+    <th width="153" height="50" scope="row">      <h3>@Html.LabelFor(m=>m.AdType)</h3></th>
+    <td width="252" height="50" >@Html.TextBoxFor(m=>m.AdType)</td>
+    <td width="81" height="50" >&nbsp;</td>
+  </tr>
+           <tr>
+    <th width="153" height="50" scope="row">      <h3>@Html.LabelFor(m=>m.Status)</h3></th>
+    <td width="252" height="50" >@Html.TextBoxFor(m=>m.Status)</td>
+    <td width="81" height="50" >&nbsp;</td>
+  </tr>
+  <tr>
+    <th width="153" height="50" scope="row">      <h3>@Html.LabelFor(m=>m.Price)</h3></th>
+    <td width="252" height="50" >@Html.TextBoxFor(m=>m.Price)</td>
+    <td width="81" height="50" >&nbsp;</td>
+  </tr>
+  
+    <td><input type="submit" name="updatebutton" value="Update Ads" /></td>
+  </tr>
+</table>
+   	  }
+      <div>
+    @Html.ActionLink("Back to MAin MEnu", "Index")
+</div>
+    </div> <!-- end of templatmeo_content -->
+
+
+
+    
+   

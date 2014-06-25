@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "ShowDetails";
+    Layout = "~/Views/Shared/_MyLayoutPro.cshtml";
+}
+<div class="center_content">
+
+<h2>ShowDetails</h2>
+
+@foreach(var p in ViewBag.list)
+{
+<label>Title</label><h3>@p.AdTitle </h3>
+    <label>Type:</label><h3><p>@p.AdType</p></h3>
+    <label>Stauts</label><h3><p>@p.Status</p></h3>
+    <label>Price:</label><h3><p>@p.Price</p></h3>
+    <label>Quantity:</label><h3><p>@p.Quantity</p></h3>
+     
+}
+    </div>

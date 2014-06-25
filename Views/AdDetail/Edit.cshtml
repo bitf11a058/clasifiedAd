@@ -1,0 +1,91 @@
+﻿@model ClassifiedAds.Models.AdDetail
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>AdDetail</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AdId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AdId)
+            @Html.ValidationMessageFor(model => model.AdId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AdTitle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AdTitle)
+            @Html.ValidationMessageFor(model => model.AdTitle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AdType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AdType)
+            @Html.ValidationMessageFor(model => model.AdType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Quantity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Quantity)
+            @Html.ValidationMessageFor(model => model.Quantity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Image_path)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Image_path)
+            @Html.ValidationMessageFor(model => model.Image_path)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.User_Id, "Customer")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("User_Id", String.Empty)
+            @Html.ValidationMessageFor(model => model.User_Id)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

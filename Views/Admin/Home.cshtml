@@ -1,0 +1,38 @@
+﻿@model ClassifiedAds.Models.AdDetail
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_MyLayoutPro.cshtml";
+}
+
+<div class="center_content">
+       
+         <h1> Admin Panel</h1> 
+       @foreach (var ads in ViewBag.ads)
+       {
+           <div class="prod_box">
+        	<div class="top_prod_box"></div>
+            <div class="center_prod_box">            
+                 <div class="ads_title"> @ads.AdTitle</div>
+                 <div class="image_path"><img src="~/Images/@ads.Image_path" alt="" title="" border="0" /></div>
+                 <div class="ads_type"><h3>Type :</h3> @ads.AdType</div> 
+                <div class="ads_status"><h3>Status :</h3> @ads.Status</div> 
+                <div class="prod_price"><h3>Price :</h3><span class="price"> @ads.Price</span></div>                        
+                 <div class="prod_quantity"><h3>Quantity :</h3> <span class="quantity">@ads.Quantity</span></div>                        
+                                      
+        </div>
+          
+            <div class="bottom_prod_box"></div>             
+            <div class="prod_details_tab">
+            
+            @Html.ActionLink("Edit","EditAds",new{id=ads.AdId}) 
+            @Html.ActionLink("Delete", "DeleteAds", new {id=ads.AdId })
+        </div>
+         </div>
+       }
+     
+       
+    </div>
+    
+   
+

@@ -1,0 +1,69 @@
+﻿@model ClassifiedAds.Models.Customer
+@{
+    ViewBag.Title = "Signup";
+    Layout = "~/Views/Shared/_MyLayoutPro.cshtml";
+   
+}
+
+
+
+<div class="center_content">
+
+<h1><span ><strong><em style="margin-left:250px">Signup</em></strong></span></h1> <br />
+
+<div id="leftblockonePan" align="left" style="text-align:left">
+     @using (Html.BeginForm("signupcheck", "Account", FormMethod.Post))
+     {
+    
+         @Html.ValidationSummary(true);
+        <table style="margin-left:300px">
+          <tr><td><p >@Html.LabelFor(m => m.UserName)</p></td><td>  @Html.TextBoxFor(m => m.UserName)</td>  <td> @Html.ValidationMessageFor(m=> m.UserName)</td></tr>
+            
+<div>
+          <tr><td><p>Email: </p></td><td> <input type="email" id="E" /></td><td><input type="button" id="b1" value="Check" /></td></tr>
+  
+           <div id="result"></div>
+            
+</div>
+		  <tr><td><p >@Html.LabelFor(m => m.Password)</p></td><td> @Html.TextBoxFor(m => m.Password)</td> <td> @Html.ValidationMessageFor(m=> m.Password)</td></tr>
+ 		 <tr><td><p >@Html.LabelFor(m => m.City)</p> </td><td>@Html.TextBoxFor(m => m.City)</td><td> @Html.ValidationMessageFor(m=> m.City)</td></tr>
+          <tr><td><p >@Html.LabelFor(m => m.Phone)</p> </td><td>@Html.TextBoxFor(m => m.Phone)</td> <td> @Html.ValidationMessageFor(m=> m.Phone)</td></tr>
+          
+          <tr><td><input type="submit" value="Sign Up"/></td></tr>
+                      
+            </table>
+          }
+  </div>
+           <script>
+
+               $(document).ready(function () {
+
+                   $('#checking').hide();
+
+                   $('#b1').click(function () {
+
+                       var email = $('#email_id').val();
+                       $('#checking').show();
+                       $.getJSON("/Account/CheckUserName? E=" + Email, function (data) {
+                           $('#checking').hide();
+                           if (data) {
+                               $('#result').text("Email already exists in database");
+
+                           }
+                           else {
+                               $('#result').text("Email is available");
+                           }
+                       });
+
+                   });
+
+               });
+    </script>
+             
+                    @section Scripts
+                       {
+                        @Scripts.Render("~/bundles/jqueryval");
+                        }
+                  
+    
+    </div>          

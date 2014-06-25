@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayoutPro.cshtml";
+}
+
+<div class="center_content">
+
+    
+     <li>@Html.ActionLink("View All Ads", "ViewAllAds","AdDetail" )</li>
+      <li>@Html.ActionLink("Search By Id", "search","AdDetail" )</li>
+      <li>@Html.ActionLink("Update Ads", "Update","Admin" )</li>
+      <li>@Html.ActionLink("Add Ads", "PostAds","AdDetail" )</li>
+       <li>@Html.ActionLink("Check History Of a User", "Inbox","AdDetail" )</li>
+       
+       
+    </div>

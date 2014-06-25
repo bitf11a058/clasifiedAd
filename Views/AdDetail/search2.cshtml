@@ -1,0 +1,55 @@
+﻿@model ClassifiedAds.Models.AdDetail
+@{
+    ViewBag.Title = "search2";
+    Layout = "~/Views/Shared/_MyLayoutPro.cshtml";
+}
+<div class="center_content">
+<h2>Search</h2>
+<div>
+       <form action="/Home/Index/">
+<div id="content" class="float_r">
+        	
+            
+            <div class="content_half float_l checkout">
+		<img src="~/Files/@ViewBag.X.Image_path" alt="" width="20%" height="20%"/><br />
+                <br />
+             	 Product ID :  
+                  <input type="text"  name="id" value="@ViewBag.X.AdId" style="width:300px;"  />
+                <br />
+                <br />
+                Product Title:  
+                  <input type="text"  name="name" value="@ViewBag.X.AdTitle" style="width:300px;"  />
+                <br />
+                <br />
+              Product Type:
+                <input type="text"  name="price" value="@ViewBag.X.AdType" style="width:300px;"  />
+                <br />
+                <br />
+
+                Product Status:
+                <input type="text"  name="quantity" value="@ViewBag.X.Status" style="width:300px;"  />
+                <br />
+                <br />
+                 Product Price:
+                <input type="text"  name="quantity" value="@ViewBag.X.Price" style="width:300px;"  />
+                <br />
+                <br />
+              
+                 Product Quantity:
+                <input type="text"  name="quantity" value="@ViewBag.X.Quantity" style="width:300px;"  />
+                <br />
+                <br />
+                 Product Image_path:
+                <input type="text"  name="quantity" value="@ViewBag.X.Image_path" style="width:300px;"  />
+                <br />
+                <br />
+              
+              
+              
+           <input type="submit" class="submit_btn" name="submit" id="submit" value="OK!" />
+                       
+                 
+
+            </div>
+       </form>
+    </div>

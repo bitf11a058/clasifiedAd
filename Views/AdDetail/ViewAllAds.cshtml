@@ -1,0 +1,21 @@
+﻿@model ClassifiedAds.Models.AdDetail
+@{
+    ViewBag.Title = "ViewAllAds";
+    Layout = "~/Views/Shared/_MyLayoutPro.cshtml";
+}
+
+@foreach(var x in ViewBag.X)
+    {
+    
+                    <figure class="img-indent" ><img src="~/Files/@x.Image_path" alt="" width="10%" height="10%"/>
+                                            <div class="extra-wrap" >
+                                            	<h3>@x.AdTitle</h3>
+                                                 <p class="p1">AdType: @x.AdType</p>
+                                                <p class="p1">Status: @x.Status</p>
+                                                <p class="p1">Price: Rs: @x.Price</p>
+                                                 <p class="p1">Quantity: @x.Quantity</p>
+                                              
+                                                
+                                            </div>
+                                                </figure>
+    }

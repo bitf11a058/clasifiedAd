@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "search";
+    Layout = "~/Views/Shared/_MyLayoutPro.cshtml";
+}
+<div class="center_content">
+
+<form action="/AdDetail/search2">
+<div    align="center">
+    Enter ID: <input type="text" name="search" id="search" /> 
+         <input type="button" id="b1" value="Check" /><br />
+     <input type="submit" id="b2" value="Show Details" /><br />
+    </form>
+
+
+    <div id="result"></div>
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+
+        $(document).ready(function () {
+
+
+            $('#b1').click(function () {
+
+                var userName = $('#search').val();
+
+                // alert('User Name ='+ userName);
+                $('#checking').show();
+                $.getJSON("/Admin/CheckUserName?UserName=" + userName, function (data) {
+                    $('#checking').hide();
+                    if (data) {
+                        $('#result').text("ID is Valid");
+
+                    }
+                    else {
+                        $('#result').text("ID is invalid");
+                    }
+                });
+
+            });
+
+        });
+    </script>
+</div>
+</div>
